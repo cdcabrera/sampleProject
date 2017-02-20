@@ -1,0 +1,53 @@
+<section ng-controller="homeController">
+
+    <h1>Users</h1>
+
+    <table class="table table-bordered" summary="table description here">
+        <thead>
+
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>E-mail</th>
+                <th>Address</th>
+            </tr>
+
+        </thead>
+
+        <tbody ng-if="data.loading" ng-cloak="">
+
+            <tr>
+                <td colspan="4">Loading...</td>
+            </tr>
+
+        </tbody>
+
+        <tbody ng-if="data.error" ng-cloak="" aria-live="polite">
+
+            <tr>
+                <td colspan="4">No results</td>
+            </tr>
+
+        </tbody>
+
+        <tbody ng-if="!data.loading" ng-cloak="" aria-live="polite">
+
+            <tr ng-repeat="user in data.users">
+                <td>
+                    <a ng-href="#/detail/{{user.id}}">{{user.name}}</a>
+                </td>
+                <td>
+                    {{user.username}}
+                </td>
+                <td>
+                    <a ng-href="mailto:{{user.email}}">{{user.email}}</a>
+                </td>
+                <td>
+                    <user-address user-id="user.id"></user-address>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</section>

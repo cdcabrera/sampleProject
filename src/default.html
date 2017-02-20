@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <title>Sample</title>
+
+        <meta name="keywords" content="sample" />
+        <meta name="description" content="sample" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- build:cssCopy css/vendor.min.css -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <!-- endbuild -->
+
+        <!-- build:css css/app.min.css -->
+        <link rel="stylesheet" href="styles/.cache/app.css" />
+        <!-- endbuild -->
+
+        <script>
+            (function(window, undefined){ var element = window.document.querySelector('HTML'); element.className = element.className.replace('no-js', '');})(this);
+        </script>
+
+    </head>
+    <body>
+
+        <!--<div>
+            <a href="#" onclick="return false;">Skip Nav</a>
+        </div>-->
+
+        <div class="app sample-project" ng-app="sampleProject">
+
+            <div class="js-message bg-warning text-warning text-center">
+                This application requires JS.
+            </div>
+
+            <div class="container" ng-view="" aria-live="polite"></div>
+        </div>
+
+
+        <!-- build:jsCopy js/vendor.min.js -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js js/app.min.js -->
+        <script src="app.js"></script>
+        <script src="config.js"></script>
+
+        <script src="components/home/controller.home.js"></script>
+        <script src="components/detail/controller.detail.js"></script>
+        <script src="components/user-address/directive.user-address.js"></script>
+
+        <script src="services/users/factory.users.js"></script>
+        <script src="services/users/filter.user-object.js"></script>
+        <script src="services/users/filter.user-array.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:remove -->
+        <script src="config.dev.js"></script>
+        <!-- endbuild -->
+
+    </body>
+</html>

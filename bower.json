@@ -1,0 +1,26 @@
+{
+    "name": "sample-project",
+    "version": "0.0.0",
+    "description": "sample project",
+    "main": [
+        "dist/"
+    ],
+    "authors": [],
+    "license": "UNLICENSED",
+    "moduleType": [],
+    "ignore": [
+
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "devDependencies": {
+
+        "angular-mocks": "1.4.14",
+        "angular": "1.4.14",
+        "angular-route": "1.4.14",
+        "bootstrap": "3.3.7"
+    }
+}

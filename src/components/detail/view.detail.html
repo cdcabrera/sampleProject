@@ -1,0 +1,27 @@
+<section ng-controller="userDetailController">
+
+    <h1>Details,
+        <span ng-if="data.user" ng-cloak="">{{data.user.name}}</span>
+        <span ng-if="!data.user" ng-cloak="">Unavailable</span>
+    </h1>
+
+    <div ng-if="data.loading" ng-cloak="">
+        Loading...
+    </div>
+
+    <div ng-if="data.error" ng-cloak="">
+        User unavailable.
+    </div>
+
+    <div ng-if="!data.loading" ng-cloak="">
+
+        <label>
+            <textarea class="form-control">{{data.user}}</textarea>
+        </label>
+
+    </div>
+
+    <a class="btn btn-primary" href="#/">Back</a>
+
+
+</section>
