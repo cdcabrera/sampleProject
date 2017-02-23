@@ -119,6 +119,8 @@
             }
         });
 
+        gulp.watch(settings.lessMatch, ['less']);
+
         gulp.watch(settings.jsMatch, ['js-hint', 'unit-test']);
 
         gulp.watch([settings.servePath+'/**/*']).on('change', browserSync.reload);
