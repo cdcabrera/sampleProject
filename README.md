@@ -19,7 +19,7 @@ To serve the application locally from the "./src" directory simply...
 $ npm start
 ```
 
-Then navigate to ```default.htm```
+Then navigate to ```default.html```
 
 ###Testing
 
