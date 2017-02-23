@@ -12,6 +12,7 @@
         "test": "karma start",
         "postinstall": "bower install",
         "start": "gulp serve",
+        "start-dist": "gulp serve-dist",
         "build": "gulp build"
     },
     "author": "",

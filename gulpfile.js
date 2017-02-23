@@ -4,7 +4,8 @@
         less            = require('gulp-less'),
         uglify          = require('gulp-uglify'),
         jshint          = require('gulp-jshint'),
-        usemin          = require('gulp-usemin');
+        usemin          = require('gulp-usemin'),
+        karma           = require('karma').Server;
 
 
     var settings = {
@@ -92,9 +93,23 @@
 
 
     /**
+     * Run unit test
+     */
+    gulp.task('unit-test', function (done) {
+
+        new karma({
+
+            configFile: __dirname + '/karma.conf.js',
+            singleRun: true
+
+        }, done).start();
+    });
+
+
+    /**
      * Serve files
      */
-    gulp.task('serve', ['less'], function () {
+    gulp.task('serve', ['less', 'js-hint'], function () {
 
         browserSync({
             server: {
@@ -104,9 +119,24 @@
             }
         });
 
-        gulp.watch(settings.lessMatch, ['less']);
+        gulp.watch(settings.jsMatch, ['js-hint', 'unit-test']);
 
-        gulp.watch(settings.jsMatch, ['js-hint']);
+        gulp.watch([settings.servePath+'/**/*']).on('change', browserSync.reload);
+    });
 
-        gulp.watch(['./src/** /*']).on('change', browserSync.reload);
+
+    /**
+     * Serve files from dist.
+     */
+    gulp.task('serve-dist', ['less', 'js-hint'], function () {
+
+        browserSync({
+            server: {
+                baseDir:    settings.dist,
+                routes:     settings.serveRoutes,
+                directory:  true
+            }
+        });
+
+        gulp.watch([settings.dist+'/**/*']).on('change', browserSync.reload);
     });
