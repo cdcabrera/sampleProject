@@ -68,7 +68,7 @@ describe('Service, Users', function () {
 
 
     /**
-     * Do service methods exist
+     * Does the service response contain data.
      */
     it('should return filtered data', function () {
 
